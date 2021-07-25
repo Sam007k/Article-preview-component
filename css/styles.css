@@ -224,6 +224,12 @@ li {
   fill: #fff;
 }
 
+@media (max-width: 799px) {
+  .container .main .shareDesktop {
+    display: none;
+  }
+}
+
 @media (min-width: 769px) {
   .container {
     position: absolute;
@@ -243,7 +249,7 @@ li {
     height: 290px;
     width: 100%;
     background-position: left;
-    border-radius: 0;
+    border-radius: 15px 0 0 15px;
   }
   .container .main .card-section {
     position: relative;
@@ -253,6 +259,7 @@ li {
   }
   .container .main .card-section .shareDesktop {
     background-color: var(--VeryDarkGrayishBlue);
+    position: absolute;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -263,11 +270,12 @@ li {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 100%;
+    width: 60%;
     border-radius: 10px;
-    right: -4rem;
-    top: 60%;
-    display: none;
+    right: -4.5rem;
+    top: 50%;
+    opacity: 0;
+    z-index: -1;
   }
   .container .main .card-section .shareDesktop h4 {
     display: block;
@@ -282,6 +290,12 @@ li {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container .main .card-section .shareDesktop .social li {
+    margin: 0 10px;
   }
   .container .main .card-section .shareDesktop .social img {
     width: 20px;
@@ -291,16 +305,25 @@ li {
   .container .main .card-section .shareDesktop .btn {
     display: none;
   }
+  .container .main .card-section .shareDesktop.active {
+    z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 100;
+    -webkit-transition: opacity 0.3s ease-in;
+    transition: opacity 0.3s ease-in;
+  }
   .container .main .card-section .shareDesktop:after {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
-    top: 100%;
+    top: 95%;
     margin: 0 auto;
     width: 0;
     height: 0;
-    border-top: 15px solid var(--VeryDarkGrayishBlue);
+    border-top: 20px solid var(--VeryDarkGrayishBlue);
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
   }
